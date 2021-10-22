@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // Add code to check answers to questions
+
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('#E').onclick = function() {
+                    document.querySelector('#E').style.backgroundColor = 'green';
+                    document.querySelector('#p1').textContent = 'Correct!';
+                };
+                document.querySelector('#R').onclick = function() {
+                    document.querySelector('#R').style.backgroundColor = 'red';
+                    document.querySelector('#p1').textContent = 'Incorrect.';
+                };
+                document.querySelector('#I').onclick = function() {
+                    document.querySelector('#I').style.backgroundColor = 'red';
+                    document.querySelector('#p1').textContent = 'Incorrect.';
+                };
+                document.querySelector('#check').onclick = function() {
+                    let A = document.querySelector('#answer').value;
+                    A = A.toLowerCase();
+                    if (A == "madrid"){
+                        document.querySelector("#p2").textContent = 'Correct!';
+                        document.querySelector('#answer').style.backgroundColor = 'green';
+                    }
+                    else{
+                        document.querySelector("#p2").textContent = 'Incorrect';
+                        document.querySelector('#answer').style.backgroundColor = 'red';
+                    }
+                };
+
+            });
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- Add multiple choice question here -->
+                <h3>What language has the most words?</h3>
+                <button type="button" id="E">English</button>
+                <button type="button" id="R">Russian</button>
+                <button type="button" id="I">Italian</button>
+                <h4 id='p1'> </h4>
+
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- Add free response question here -->
+                <h3>What is the capital city of Spain?</h3>
+                <form>
+                    <input autocomplete="off" id="answer" type="text">
+                    <button type="button" id="check">Check Answer</button>
+                    <h4 id='p2'> </h4>
+                </form>
+
+            </div>
+
+        </div>
+    </body>
+</html>
