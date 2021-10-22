@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Chat</title>
+</head>
+<body>
+<!-- container and title -->
+  <div class="container my-4">
+    <h1 class="my-4 text-center">Chat</h1>
+
+    <!-- buttons for chatrooms -->
+    <div class="chat-rooms mb-3 text-center">
+      <div class="my-2">Choose a chatroom:</div>
+      <button class="btn" id="general">#general</button>
+      <button class="btn" id="gaming">#gaming</button>
+      <button class="btn" id="music">#music</button>
+      <button class="btn" id="ninjas">#ninjas</button>
+    </div>
+
+    <!-- chat list / window -->
+    <div class="chat-window">
+    <ul class="chat-list list-group"></ul>
+    </div>
+
+    <!-- new chat form -->
+    <form class="new-chat my-3">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Your message:</div>
+      </div>
+      <input type="text" id="message" class="form-control" required>
+      <div class="input-group-append">
+        <input type="submit" class="btn" value="send">
+      </div>
+    </div>
+    </form>
+
+    <!-- update name form -->
+    <form class="new-name my-3">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Update name:</div>
+      </div>
+      <input type="text" id="name" class="form-control" required>
+      <div class="input-group-append">
+        <input type="submit" class="btn" value="update">
+      </div>
+    </div>
+    <div class="update-mssg"></div>
+    </form>
+  </div>
+  <!--Date formatting-->
+  <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script> 
+  <!--Firebase--> 
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script>
+    // Web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCGm46V0TmP2sSTRhABhFjPCIVKPxKP_fs",
+      authDomain: "database-ninja-js.firebaseapp.com",
+      projectId: "database-ninja-js",
+      storageBucket: "database-ninja-js.appspot.com",
+      messagingSenderId: "535218083084",
+      appId: "1:535218083084:web:0bc2ee2a64df3640fda529"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script src="script/chat.js"></script>
+  <script src="script/ui.js"></script>
+  <script src="script/app.js"></script> 
+
+</body>
+</html>
